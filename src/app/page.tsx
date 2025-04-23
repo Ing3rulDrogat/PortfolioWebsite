@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithubSquare } from "react-icons/fa";
+
 import { FaReact } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa";
@@ -18,7 +17,6 @@ export default function Home() {
         <section className="h-screen snap-start">
           <StartPage />
         </section>
-
         <section className="h-screen snap-start">
           <Skills />
         </section>
