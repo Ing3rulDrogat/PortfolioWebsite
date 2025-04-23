@@ -6,11 +6,33 @@ import { SiNextdotjs } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
+import Skills from "@/components/Skills";
+import { useRef } from "react";
+import Projects from "@/components/Projects";
+import StartPage from "@/components/StartPage";
 
 export default function Home() {
   return (
     <>
-      <div className="flex justify-center items-center w-screen h-screen">
+      <div className="h-screen snap-y snap-mandatory overflow-scroll overflow-x-hidden">
+        <section className="h-screen snap-start">
+          <StartPage />
+        </section>
+
+        <section className="h-screen snap-start">
+          <Skills />
+        </section>
+
+        <section className="h-screen snap-start">
+          <Projects />
+        </section>
+      </div>
+    </>
+  );
+}
+
+{
+  /*<div className="flex justify-center items-center w-screen h-screen">
         <div className="bg-gray-500/50 lg:h-220 lg:w-300  flex justify-center items-center rounded-3xl">
           <div className="text-center h-[95%] w-[95%] flex flex-col">
             <div className="bg-blue-500 w-full h-1/4 flex justify-center items-center">
@@ -82,11 +104,12 @@ export default function Home() {
             </div>
             <div className="bg-blue-500 w-full h-1/4 flex justify-center items-center">
               <div className="bg-red-500 w-1/4 h-full flex">CV Download</div>
-              <div className="bg-red-500 w-1/4 h-full flex"> ToDo:</div>
+              <div className="bg-red-500 w-1/4 h-full flex">
+                {" "}
+                ToDo: Rest Apis.
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </>
-  );
+      </div> */
 }
