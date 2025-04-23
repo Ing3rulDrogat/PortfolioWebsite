@@ -1,12 +1,4 @@
-import Image from "next/image";
-
-import { FaReact } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
 import Skills from "@/components/Skills";
-import { useRef } from "react";
 import Projects from "@/components/Projects";
 import StartPage from "@/components/StartPage";
 
