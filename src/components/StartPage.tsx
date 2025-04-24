@@ -3,7 +3,6 @@ import { MdLocationOn } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
 import { FaSquareEnvelope } from "react-icons/fa6";
-import { Roboto } from "next/font/google";
 
 function StartPage() {
   return (
@@ -13,9 +12,10 @@ function StartPage() {
           <h1 className="text-5xl primary-font ">Mihai Trif</h1>
           <h1 className="text-4xl">Full Stack</h1>
           <h1 className="text-4xl">
-            <b className="text-green-300">Software </b>Developer
+            <b className="text-green-300 ">Software </b>
+            Developer
           </h1>
-          <div className=" w-full h-7/12 justify-center flex">
+          <div className=" w-full h-7/12 justify-center flex ">
             <div className=" w-1/2 h-2/12 ">
               <div className=" w-full h-full flex text-center justify-center">
                 <MdLocationOn size={30} />
