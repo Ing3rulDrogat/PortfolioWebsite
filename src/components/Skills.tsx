@@ -30,7 +30,7 @@ function Skills() {
             Technologies I actively use and have hands-on experience with.
           </p>
         </div>
-        <div className=" h-1/2 w-1/2 flex flex-wrap pl-10">
+        <div className=" h-1/2 w-1/2 flex flex-wrap pl-10 pr-10">
           <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
             <FaReact size={50} />
             <p className="text-[13px]">React</p>
