@@ -1,4 +1,6 @@
 import React from "react";
+import { FaGithubSquare } from "react-icons/fa";
+import NexCircle from "../../public/NexCircle.png";
 
 function Projects() {
   return (
@@ -7,16 +9,39 @@ function Projects() {
         <h1 className="text-5xl"> Projects:</h1>
       </div>
       <div className=" w-full h-full content-center place-items-center ">
-        <div className=" w-11/12 h-9/12 mb-25 grid grid-cols-3 content-center place-items-center">
-          <div className="bg-teal-900 w-100 h-100 shadow-lg shadow-black rounded-3xl">
-            <img></img>
+        <div className=" w-11/12 h-9/12 mb-25 grid grid-cols-1">
+          <div className="bg-teal-900 w-full h-50 shadow-lg shadow-black rounded-3xl flex">
+            <div className=" content-center w-1/12 h-full ml-5">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/Ing3rulDrogat/NexCircle"
+              >
+                <img
+                  src={NexCircle.src}
+                  alt="Logo"
+                  className="w-full rounded-2xl"
+                ></img>
+              </a>
+            </div>
+            <div className=" w-full h-full pl-5 flex flex-col">
+              <div className="w-full h-2/3 content-center">
+                <p className="text-2xl pr-5">
+                  NexCircle is a full-stack social media application built with
+                  Next.js, featuring responsive design, secure authentication,
+                  file uploads, and modern UI components. This project
+                  highlights my skills in frontend, backend, and database
+                  management, while showcasing a clean, scalable, and
+                  user-friendly web experience.
+                </p>
+              </div>
+              <div className=" w-full h-1/3 grid grid-cols-8 content-center">
+                <FaGithubSquare size={40} />
+              </div>
+            </div>
           </div>
-          <div className="bg-teal-900 w-100 h-100 shadow-lg shadow-black rounded-3xl place-items-center">
-            <div className="bg-amber-500 w-11/12 h-1/3 mt-2 "> Image</div>
-          </div>
-          <div className="bg-teal-900 w-100 h-100 shadow-lg shadow-black rounded-3xl">
-            <img></img>
-          </div>
+          <div className="bg-teal-900 w-full h-50 shadow-lg shadow-black rounded-3xl"></div>
+          <div className="bg-teal-900 w-full h-50 shadow-lg shadow-black rounded-3xl"></div>
         </div>
       </div>
     </div>

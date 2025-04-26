@@ -22,8 +22,21 @@ function StartPage() {
                 <h2 className=" text-2xl">Scunthorpe, England</h2>
               </div>
               <div className=" w-full h-full flex text-center justify-center pt-1">
-                <FaLinkedin size={30} />
-                <FaGithubSquare size={30} />
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.linkedin.com/in/mihai-trif-609a2a297/"
+                >
+                  <FaLinkedin size={30} />
+                </a>
+
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://github.com/Ing3rulDrogat"
+                >
+                  <FaGithubSquare size={30} />
+                </a>
                 <FaSquareEnvelope size={30} />
               </div>
             </div>
