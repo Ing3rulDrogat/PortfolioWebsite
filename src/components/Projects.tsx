@@ -4,7 +4,7 @@ import NexCircle from "../../public/NexCircle.png";
 
 function Projects() {
   return (
-    <div className="w-screen h-screen bg-teal-950 overflow-x-hidden">
+    <div className="w-screen h-screen bg-teal-950">
       <div className="w-full h-1/12 content-center text-center">
         <h1 className="text-5xl"> Projects:</h1>
       </div>
@@ -40,7 +40,7 @@ function Projects() {
               </div>
             </div>
           </div>
-          <div className="bg-teal-900 w-full h-50 shadow-lg shadow-black rounded-3xl"></div>
+          <div className="bg-teal-900 w-full h-50 shadow-lg shadow-black rounded-3xl "></div>
           <div className="bg-teal-900 w-full h-50 shadow-lg shadow-black rounded-3xl"></div>
         </div>
       </div>

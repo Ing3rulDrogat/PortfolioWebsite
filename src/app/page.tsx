@@ -1,6 +1,7 @@
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import StartPage from "@/components/StartPage";
+import WorkAndEducation from "@/components/WorkAndEducation";
 
 export default function Home() {
   return (
@@ -15,6 +16,10 @@ export default function Home() {
 
         <section className="h-screen snap-start">
           <Projects />
+        </section>
+
+        <section className="h-screen snap-start">
+          <WorkAndEducation />
         </section>
       </div>
     </>
