@@ -12,17 +12,19 @@ function Projects() {
         <div className=" w-11/12 h-9/12 mb-25 grid grid-cols-1">
           <div className="bg-teal-900 w-full h-50 shadow-lg shadow-black rounded-3xl flex">
             <div className=" content-center w-1/12 h-full ml-5">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/Ing3rulDrogat/NexCircle"
-              >
-                <img
-                  src={NexCircle.src}
-                  alt="Logo"
-                  className="w-full rounded-2xl"
-                ></img>
-              </a>
+              <div className=" overflow-hidden  rounded-2xl">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://github.com/Ing3rulDrogat/NexCircle"
+                >
+                  <img
+                    src={NexCircle.src}
+                    alt="Logo"
+                    className="w-full  transition-transform duration-300 ease-in-out hover:scale-120"
+                  ></img>
+                </a>
+              </div>
             </div>
             <div className=" w-full h-full pl-5 flex flex-col">
               <div className="w-full h-2/3 content-center">

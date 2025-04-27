@@ -19,7 +19,9 @@ function StartPage() {
             <div className=" w-1/2 h-2/12 ">
               <div className=" w-full h-full flex text-center justify-center">
                 <MdLocationOn size={30} />
-                <h2 className=" text-2xl">Scunthorpe, England</h2>
+                <div className="animate-box">
+                  <h2 className=" text-2xl">Scunthorpe, England</h2>
+                </div>
               </div>
               <div className=" w-full h-full flex text-center justify-center pt-1">
                 <a
