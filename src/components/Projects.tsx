@@ -21,7 +21,7 @@ function Projects() {
                   <img
                     src={NexCircle.src}
                     alt="Logo"
-                    className="w-full  transition-transform duration-300 ease-in-out hover:scale-120"
+                    className="w-full  transition-transform duration-500 ease-in-out hover:scale-120"
                   ></img>
                 </a>
               </div>

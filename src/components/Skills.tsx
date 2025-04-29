@@ -31,59 +31,59 @@ function Skills() {
           </p>
         </div>
         <div className=" h-1/2 w-1/2 flex flex-wrap pl-10 pr-10">
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <FaReact size={50} />
             <p className="text-[13px]">React</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <SiNextdotjs size={50} />
             <p className="text-[13px]">Next.js</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1.5 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1.5 hover:shadow-lg cursor-pointer transition-shadow">
             <SiTypescript size={46} />
             <p className="text-[13px]">Typescript</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <FaJs size={50} />
             <p className="text-[13px]">Javascript</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <FaHtml5 size={50} />
             <p className="text-[13px]">HTML5</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <FaCss3Alt size={50} />
             <p className="text-[13px]">CSS3</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <RiTailwindCssFill size={50} />
             <p className="text-[13px]">Tailwind</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <SiPrisma size={50} />
             <p className="text-[13px]">Prisma</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <SiPostgresql size={50} />
             <p className="text-[13px]">Postgresql</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <IoLogoVercel size={50} />
             <p className="text-[13px]">Vercel</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <FaGitAlt size={50} />
             <p className="text-[13px]">GIT</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <FaSquareGithub size={50} />
             <p className="text-[13px]">Github</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <TbBrandCSharp size={50} />
             <p className="text-[13px]">C#</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <SiCplusplus size={50} />
             <p className="text-[13px]">C++</p>
           </div>
@@ -99,23 +99,23 @@ function Skills() {
           </p>
         </div>
         <div className=" h-1/2 w-1/2 flex flex-wrap pl-10 mt-10 lg:pt-1  sm:mt-25">
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <TbBrandThreejs size={50} />
             <p className="text-[13px]">Threejs</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <FaAws size={50} />
             <p className="text-[13px]">AWS</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <TbBrandReactNative size={50} />
             <p className="text-[13px]">Native</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <IoLogoElectron size={50} />
             <p className="text-[13px]">Electron</p>
           </div>
-          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer">
+          <div className="bg-teal-950 rounded-2xl shadow-sm shadow-green-300 w-20 h-1/4 ml-10 flex items-center flex-col  pt-1 hover:shadow-lg cursor-pointer transition-shadow">
             <FaNode size={50} />
             <p className="text-[13px]">Node</p>
           </div>

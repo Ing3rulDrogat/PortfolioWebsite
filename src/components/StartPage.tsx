@@ -9,10 +9,22 @@ function StartPage() {
     <div className="w-screen h-screen bg-teal-950 overflow-x-hidden flex items-center justify-center">
       <div className=" w-1/2 h-9/12 flex justify-center  text-center flex-wrap">
         <div className=" w-full h-1/2 pt-10">
-          <h1 className="text-5xl primary-font ">Mihai Trif</h1>
+          <div className="flex justify-center items-center">
+            <h1 className="text-5xl primary-font animate-m opacity-0">M</h1>
+            <h1 className="text-5xl primary-font animate-i opacity-0">i</h1>
+            <h1 className="text-5xl primary-font animate-h opacity-0">h</h1>
+            <h1 className="text-5xl primary-font animate-a opacity-0">a</h1>
+            <h1 className="text-5xl primary-font animate-i2 opacity-0">i</h1>
+            <h1 className="text-5xl primary-font ml-2 animate-t opacity-0">
+              T
+            </h1>
+            <h1 className="text-5xl primary-font animate-r opacity-0">r</h1>
+            <h1 className="text-5xl primary-font animate-i3 opacity-0">i</h1>
+            <h1 className="text-5xl primary-font animate-f opacity-0">f</h1>
+          </div>
           <h1 className="text-4xl">Full Stack</h1>
           <h1 className="text-4xl">
-            <b className="text-green-300 ">Software </b>
+            <b className="text-green-300 ">Software & Website </b>
             Developer
           </h1>
           <div className=" w-full h-7/12 justify-center flex ">
@@ -29,7 +41,10 @@ function StartPage() {
                   rel="noopener noreferrer"
                   href="https://www.linkedin.com/in/mihai-trif-609a2a297/"
                 >
-                  <FaLinkedin size={30} />
+                  <FaLinkedin
+                    size={30}
+                    className=" hover:scale-120 transition-transform"
+                  />
                 </a>
 
                 <a
@@ -37,9 +52,15 @@ function StartPage() {
                   rel="noopener noreferrer"
                   href="https://github.com/Ing3rulDrogat"
                 >
-                  <FaGithubSquare size={30} />
+                  <FaGithubSquare
+                    size={30}
+                    className=" hover:scale-120 transition-transform"
+                  />
                 </a>
-                <FaSquareEnvelope size={30} />
+                <FaSquareEnvelope
+                  size={30}
+                  className=" hover:scale-120 transition-transform cursor-pointer"
+                />
               </div>
             </div>
           </div>
