@@ -11,7 +11,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  --animate-box: box 1s linear 1;
+  --animate-box: box 3s linear 1;
   @keyframes box {
     0% {
       transform: scale(0);
@@ -25,127 +25,286 @@
     }
   }
 
-  --animate-scaleOut: scaleOut 0.5s linear 1 alternate forwards;
-  @keyframes scaleOut {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.3);
-    }
-  }
-
-  --animate-scaleIn: scaleIn 0.5s linear 1 alternate-reverse forwards;
-  @keyframes scaleIn {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.3);
-    }
-  }
-
-  --animate-m: m 1s ease-in-out 0.5s 1 normal forwards;
+  --animate-m: m 3s ease-in-out 0.5s 1 normal forwards;
   @keyframes m {
-    from {
+    0% {
       opacity: 0;
-      transform: translate(0, 20px);
+      transform: translate(0, 30vh);
     }
-    to {
+    25% {
       opacity: 1;
-      transform: translate(0, 0px);
+      transform: translate(0, 25vh);
+    }
+    80% {
+      opacity: 1;
+      transform: translate(0, 25vh);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0vh);
     }
   }
 
-  --animate-i: i 1s ease-in-out 0.7s 1 normal forwards;
+  --animate-i: i 3s ease-in-out 0.7s 1 normal forwards;
   @keyframes i {
-    from {
+    0% {
       opacity: 0;
-      transform: translate(0, 20px);
+      transform: translate(0, 30vh);
     }
-    to {
+    25% {
       opacity: 1;
-      transform: translate(0, 0px);
+      transform: translate(0, 25vh);
+    }
+    80% {
+      opacity: 1;
+      transform: translate(0, 25vh);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0vh);
     }
   }
 
-  --animate-h: h 1s ease-in-out 0.9s 1 normal forwards;
+  --animate-h: h 3s ease-in-out 0.9s 1 normal forwards;
   @keyframes h {
-    from {
+    0% {
       opacity: 0;
-      transform: translate(0, 20px);
+      transform: translate(0, 30vh);
     }
-    to {
+    25% {
       opacity: 1;
-      transform: translate(0, 0px);
+      transform: translate(0, 25vh);
+    }
+    80% {
+      opacity: 1;
+      transform: translate(0, 25vh);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0vh);
     }
   }
 
-  --animate-a: a 1s ease-in-out 1.1s 1 normal forwards;
+  --animate-a: a 3s ease-in-out 1.1s 1 normal forwards;
   @keyframes a {
-    from {
+    0% {
       opacity: 0;
-      transform: translate(0, 20px);
+      transform: translate(0, 30vh);
     }
-    to {
+    25% {
       opacity: 1;
-      transform: translate(0, 0px);
+      transform: translate(0, 25vh);
+    }
+    80% {
+      opacity: 1;
+      transform: translate(0, 25vh);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0vh);
     }
   }
 
-  --animate-i2: i2 1s ease-in-out 1.3s 1 normal forwards;
+  --animate-i2: i2 3s ease-in-out 1.3s 1 normal forwards;
   @keyframes i2 {
-    from {
+    0% {
       opacity: 0;
-      transform: translate(0, 20px);
+      transform: translate(0, 30vh);
     }
-    to {
+    25% {
       opacity: 1;
-      transform: translate(0, 0px);
+      transform: translate(0, 25vh);
+    }
+    80% {
+      opacity: 1;
+      transform: translate(0, 25vh);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0vh);
     }
   }
-  --animate-t: t 1s ease-in-out 1.5s 1 normal forwards;
+  --animate-t: t 3s ease-in-out 1.5s 1 normal forwards;
   @keyframes t {
-    from {
+    0% {
       opacity: 0;
-      transform: translate(0, 20px);
+      transform: translate(0, 30vh);
     }
-    to {
+    25% {
       opacity: 1;
-      transform: translate(0, 0px);
+      transform: translate(0, 25vh);
+    }
+    80% {
+      opacity: 1;
+      transform: translate(0, 25vh);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0vh);
     }
   }
-  --animate-r: r 1s ease-in-out 1.7s 1 normal forwards;
+  --animate-r: r 3s ease-in-out 1.7s 1 normal forwards;
   @keyframes r {
-    from {
+    0% {
       opacity: 0;
-      transform: translate(0, 20px);
+      transform: translate(0, 30vh);
     }
-    to {
+    25% {
       opacity: 1;
-      transform: translate(0, 0px);
+      transform: translate(0, 25vh);
+    }
+    80% {
+      opacity: 1;
+      transform: translate(0, 25vh);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0vh);
     }
   }
-  --animate-i3: i3 1s ease-in-out 1.9s 1 normal forwards;
+  --animate-i3: i3 3s ease-in-out 1.9s 1 normal forwards;
   @keyframes i3 {
-    from {
+    0% {
       opacity: 0;
-      transform: translate(0, 20px);
+      transform: translate(0, 30vh);
     }
-    to {
+    25% {
       opacity: 1;
-      transform: translate(0, 0px);
+      transform: translate(0, 25vh);
+    }
+    80% {
+      opacity: 1;
+      transform: translate(0, 25vh);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0vh);
     }
   }
-  --animate-f: f 1s ease-in-out 2.1s 1 normal forwards;
+  --animate-f: f 3s ease-in-out 2.1s 1 normal forwards;
   @keyframes f {
+    0% {
+      opacity: 0;
+      transform: translate(0, 30vh);
+    }
+    25% {
+      opacity: 1;
+      transform: translate(0, 25vh);
+    }
+    80% {
+      opacity: 1;
+      transform: translate(0, 25vh);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0vh);
+    }
+  }
+
+  --animate-icon1: icon1 5s ease-in-out 2s infinite;
+  @keyframes icon1 {
+    0% {
+      transform: scale(1);
+    }
+    10% {
+      transform: scale(1.3);
+    }
+    20% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  --animate-icon2: icon2 5s ease-in-out 2.5s infinite;
+  @keyframes icon2 {
+    0% {
+      transform: scale(1);
+    }
+    10% {
+      transform: scale(1.3);
+    }
+    20% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  --animate-icon3: icon3 5s ease-in-out 3s infinite;
+  @keyframes icon3 {
+    0% {
+      transform: scale(1);
+    }
+    10% {
+      transform: scale(1.3);
+    }
+    20% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  --animate-fullStack: fullstack 0.5s ease-in-out 5.2s 1 normal forwards;
+  @keyframes fullstack {
     from {
       opacity: 0;
-      transform: translate(0, 20px);
+      transform: translate(50vw, 0);
     }
     to {
       opacity: 1;
-      transform: translate(0, 0px);
+      transform: translate(0vw, 0);
+    }
+  }
+
+  --animate-developer: developer 0.5s ease-in-out 5.4s 1 normal forwards;
+  @keyframes developer {
+    from {
+      opacity: 0;
+      transform: translate(-50vw, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0vw, 0);
+    }
+  }
+
+  --animate-location: location 0.5s ease-in-out 5.6s 1 normal forwards;
+  @keyframes location {
+    from {
+      opacity: 0;
+      transform: translate(50vw, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0vw, 0);
+    }
+  }
+
+  --animate-icons: icons 0.5s ease-in-out 5.8s 1 normal forwards;
+  @keyframes icons {
+    from {
+      opacity: 0;
+      transform: translate(-50vw, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0vw, 0);
+    }
+  }
+
+  --animate-startAboutMe: aboutme 0.5s ease-in-out 6s 1 normal forwards;
+  @keyframes aboutme {
+    from {
+      opacity: 0;
+      transform: translate(50vw, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate(0vw, 0);
     }
   }
 }
