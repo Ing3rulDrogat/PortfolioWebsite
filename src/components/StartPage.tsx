@@ -5,7 +5,7 @@ import { FaGithubSquare } from "react-icons/fa";
 import { FaSquareEnvelope } from "react-icons/fa6";
 
 import { Roboto } from "next/font/google";
-const h = Roboto({
+const Robot = Roboto({
   weight: ["400"],
   subsets: ["latin"],
   preload: true,
@@ -13,7 +13,7 @@ const h = Roboto({
 
 function StartPage() {
   return (
-    <div className={h.className}>
+    <div className={Robot.className}>
       <div className="w-screen h-screen bg-teal-950 overflow-x-hidden flex items-center justify-center">
         <div className=" w-1/2 h-9/12 flex justify-center  text-center flex-wrap">
           <div className=" w-full h-1/2 pt-10">
@@ -33,7 +33,7 @@ function StartPage() {
               <b className="text-green-300 ">Software & Website </b>
               Developer
             </h1>
-            <div className=" w-full h-7/12 justify-center flex ">
+            <div className=" w-full h-7/12 justify-center flex">
               <div className=" w-1/2 h-2/12 ">
                 <div className=" w-full h-full flex text-center justify-center animate-location opacity-0">
                   <MdLocationOn size={30} />
@@ -41,7 +41,7 @@ function StartPage() {
                     <h2 className=" text-2xl">Scunthorpe, England</h2>
                   </div>
                 </div>
-                <div className=" w-full h-full flex text-center justify-center pt-1 animate-icons opacity-0">
+                <div className=" w-full h-full flex text-center justify-center lg:pt-1 animate-icons opacity-0 pt-12">
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -71,7 +71,7 @@ function StartPage() {
               </div>
             </div>
           </div>
-          <div className=" w-full h-1/2 opacity-0 animate-startAboutMe">
+          <div className=" w-full h-1/2 opacity-0 animate-startAboutMe hidden lg:block">
             <div>
               <h1 className="text-3xl">About me</h1>
             </div>

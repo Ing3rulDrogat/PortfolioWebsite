@@ -28,7 +28,7 @@ function Projects() {
             </div>
             <div className=" w-full h-full pl-5 flex flex-col">
               <div className="w-full h-2/3 content-center">
-                <p className="text-2xl pr-5">
+                <p className="text-sm lg:text-2xl pr-5">
                   NexCircle is a full-stack social media application built with
                   Next.js, featuring responsive design, secure authentication,
                   file uploads, and modern UI components. This project
@@ -42,8 +42,8 @@ function Projects() {
               </div>
             </div>
           </div>
-          <div className="bg-teal-900 w-full h-50 shadow-lg shadow-black rounded-3xl "></div>
-          <div className="bg-teal-900 w-full h-50 shadow-lg shadow-black rounded-3xl"></div>
+          <div className="bg-teal-900 w-full h-50 shadow-lg shadow-black rounded-3xl  hidden lg:block"></div>
+          <div className="bg-teal-900 w-full h-50 shadow-lg shadow-black rounded-3xl hidden lg:block"></div>
         </div>
       </div>
     </div>
