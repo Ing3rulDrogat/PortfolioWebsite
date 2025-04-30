@@ -32,15 +32,33 @@ const Robot = Roboto({
 function Skills() {
   const hasPlayed = useRef<Set<Element>>(new Set());
 
+  const buttonClicked = () => {
+    const elements = document.querySelectorAll(".skills");
+
+    elements.forEach((e) => {
+      var prevTimeDelay: number = 550;
+      var timeDelay: number = 0;
+      e.classList.remove("animate-skillsAppearing");
+      e.classList.remove(`[animation-delay:${prevTimeDelay}ms]`);
+      e.classList.remove("opacity-0");
+      e.classList.add(`[animation-delay:${timeDelay}ms]`);
+      e.classList.add("animate-skillsDisappearing");
+      timeDelay = timeDelay + 50;
+    });
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        var timeDelay: number = 550;
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasPlayed.current.has(entry.target)) {
-            entry.target.classList.add("animate-skills");
+            entry.target.classList.add("animate-skillsAppearing");
+            entry.target.classList.add(`[animation-delay:${timeDelay}ms]`);
+            timeDelay = timeDelay + 50;
             hasPlayed.current.add(entry.target);
           } else {
-            entry.target.classList.remove("animate-skills");
+            // entry.target.classList.remove("animate-skills");
           }
         });
       },
@@ -63,9 +81,7 @@ function Skills() {
           <div className="bg-blue-900 w-1/2 ">
             <h1 className="text-3xl mb-7"> About Me:</h1>
             <p className="text-2xl">
-              I am a full stack software and website developer working on
-              expanding my knowledge. I have examples of a few projects on the
-              next page.
+              I am a full stack software and website developer working on expanding my knowledge. I have examples of a few projects on the next page.
             </p>
           </div>
         </div>
@@ -73,71 +89,73 @@ function Skills() {
           <div className=" w-1/3 h-2/12 grid grid-cols-2 place-items-center">
             <button
               type="button"
+              onClick={buttonClicked}
               className="z-10 relative px-4 py-2 mx-5 h-1/2 bg-amber-700 text-white rounded hover:bg-blue-700 transition cursor-pointer button-TEMP"
             >
               Technologies I know
             </button>
-            <button
-              type="button"
-              className="px-4 py-2 mx-5 bg-amber-700 text-white rounded hover:bg-blue-700 transition cursor-pointer"
-            >
+            <button type="button" className="px-4 py-2 mx-5 bg-amber-700 text-white rounded hover:bg-blue-700 transition cursor-pointer">
               Learning roadmap
             </button>
           </div>
           <div className="bg-teal-950 w-8/12 h-1/2 my-13 rounded-3xl grid grid-cols-7">
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:500ms]">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
               <FaReact size={50} />
               <p className="text-[13px]">React</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:600ms]">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
               <SiNextdotjs size={50} />
               <p className="text-[13px]">Next.js</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:700ms]">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
               <SiTypescript size={46} />
               <p className="text-[13px]">Typescript</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:800ms]">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
               <FaJs size={50} />
               <p className="text-[13px]">Javascript</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:900ms]">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
               <FaHtml5 size={50} />
               <p className="text-[13px]">HTML5</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1000ms]">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
               <FaCss3Alt size={50} />
               <p className="text-[13px]">CSS3</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1100ms]">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
               <RiTailwindCssFill size={50} />
               <p className="text-[13px]">Tailwind</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1200ms]">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
               <SiPrisma size={50} />
               <p className="text-[13px]">Prisma</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1300ms]">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
               <SiPostgresql size={50} />
               <p className="text-[13px]">Postgresql</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1400ms]">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0">
               <IoLogoVercel size={50} />
               <p className="text-[13px]">Vercel</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1500ms]">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0">
               <FaGitAlt size={50} />
               <p className="text-[13px]">GIT</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1700ms]">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0">
               <FaSquareGithub size={50} />
               <p className="text-[13px]">Github</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1800ms]">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0">
               <TbBrandCSharp size={50} />
               <p className="text-[13px]">C#</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1900ms]">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0">
+              <SiCplusplus size={50} />
+              <p className="text-[13px]">C++</p>
+            </div>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 hidden">
               <SiCplusplus size={50} />
               <p className="text-[13px]">C++</p>
             </div>

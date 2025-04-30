@@ -13,27 +13,16 @@ function Projects() {
           <div className="bg-teal-900 w-full h-50 shadow-lg shadow-black rounded-3xl flex">
             <div className=" content-center w-1/12 h-full ml-5">
               <div className=" overflow-hidden  rounded-2xl">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://github.com/Ing3rulDrogat/NexCircle"
-                >
-                  <img
-                    src={NexCircle.src}
-                    alt="Logo"
-                    className="w-full  transition-transform duration-500 ease-in-out hover:scale-120"
-                  ></img>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ing3rulDrogat/NexCircle">
+                  <img src={NexCircle.src} alt="Logo" className="w-full  transition-transform duration-500 ease-in-out hover:scale-120"></img>
                 </a>
               </div>
             </div>
             <div className=" w-full h-full pl-5 flex flex-col">
               <div className="w-full h-2/3 content-center">
                 <p className="text-sm lg:text-2xl pr-5">
-                  NexCircle is a full-stack social media application built with
-                  Next.js, featuring responsive design, secure authentication,
-                  file uploads, and modern UI components. This project
-                  highlights my skills in frontend, backend, and database
-                  management, while showcasing a clean, scalable, and
+                  NexCircle is a full-stack social media application built with Next.js, featuring responsive design, secure authentication, file uploads, and
+                  modern UI components. This project highlights my skills in frontend, backend, and database management, while showcasing a clean, scalable, and
                   user-friendly web experience.
                 </p>
               </div>
