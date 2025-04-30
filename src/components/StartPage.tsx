@@ -12,21 +12,40 @@ const Robot = Roboto({
 });
 
 function StartPage() {
+  const timer = 5000;
   return (
     <div className={Robot.className}>
       <div className="w-screen h-screen bg-teal-950 overflow-x-hidden flex items-center justify-center">
         <div className=" w-1/2 h-9/12 flex justify-center  text-center flex-wrap">
           <div className=" w-full h-1/2 pt-10">
-            <div className=" flex justify-center items-center">
-              <h1 className="animate-m delay-[1000ms] opacity-0 text-5xl">M</h1>
-              <h1 className="text-5xl animate-i opacity-0">i</h1>
-              <h1 className="text-5xl animate-h opacity-0">h</h1>
-              <h1 className="text-5xl animate-a opacity-0">a</h1>
-              <h1 className="text-5xl animate-i2 opacity-0">i</h1>
-              <h1 className="text-5xl ml-2 animate-t opacity-0">T</h1>
-              <h1 className="text-5xl animate-r opacity-0">r</h1>
-              <h1 className="text-5xl animate-i3 opacity-0">i</h1>
-              <h1 className="text-5xl animate-f opacity-0">f</h1>
+            <div className=" flex justify-center items-center animate-nameDiv">
+              <h1 className="text-5xl [animation-delay:500ms] animate-name opacity-0 ">
+                M
+              </h1>
+              <h1 className="text-5xl [animation-delay:600ms] animate-name opacity-0">
+                i
+              </h1>
+              <h1 className="text-5xl [animation-delay:700ms] animate-name opacity-0">
+                h
+              </h1>
+              <h1 className="text-5xl [animation-delay:800ms] animate-name opacity-0">
+                a
+              </h1>
+              <h1 className="text-5xl [animation-delay:900ms] animate-name opacity-0">
+                i
+              </h1>
+              <h1 className="text-5xl [animation-delay:1000ms] ml-2 animate-name opacity-0">
+                T
+              </h1>
+              <h1 className="text-5xl [animation-delay:1100ms] animate-name opacity-0">
+                r
+              </h1>
+              <h1 className="text-5xl [animation-delay:1200ms] animate-name opacity-0">
+                i
+              </h1>
+              <h1 className="text-5xl [animation-delay:1300ms] animate-name opacity-0">
+                f
+              </h1>
             </div>
             <h1 className="text-4xl animate-fullStack opacity-0">Full Stack</h1>
             <h1 className="text-4xl animate-developer opacity-0">

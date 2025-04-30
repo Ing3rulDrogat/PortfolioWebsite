@@ -37,17 +37,17 @@ function Skills() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasPlayed.current.has(entry.target)) {
-            entry.target.classList.add("animate-a");
+            entry.target.classList.add("animate-skills");
             hasPlayed.current.add(entry.target);
           } else {
-            entry.target.classList.remove("animate-a");
+            entry.target.classList.remove("animate-skills");
           }
         });
       },
       { threshold: 0.5 }
     );
 
-    const elements = document.querySelectorAll(".square");
+    const elements = document.querySelectorAll(".skills");
 
     elements.forEach((el) => {
       observer.observe(el);
@@ -69,11 +69,11 @@ function Skills() {
             </p>
           </div>
         </div>
-        <div className="bg-red-300 w-full h-7/12  place-items-center">
-          <div className="bg-red-400 w-1/3 h-1/12 grid grid-cols-2">
+        <div className=" w-full h-7/12  place-items-center pt-5">
+          <div className=" w-1/3 h-2/12 grid grid-cols-2 place-items-center">
             <button
               type="button"
-              className="px-4 py-2 mx-5 bg-amber-700 text-white rounded hover:bg-blue-700 transition cursor-pointer"
+              className="z-10 relative px-4 py-2 mx-5 h-1/2 bg-amber-700 text-white rounded hover:bg-blue-700 transition cursor-pointer button-TEMP"
             >
               Technologies I know
             </button>
@@ -85,59 +85,59 @@ function Skills() {
             </button>
           </div>
           <div className="bg-teal-950 w-8/12 h-1/2 my-13 rounded-3xl grid grid-cols-7">
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:500ms]">
               <FaReact size={50} />
               <p className="text-[13px]">React</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:600ms]">
               <SiNextdotjs size={50} />
               <p className="text-[13px]">Next.js</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:700ms]">
               <SiTypescript size={46} />
               <p className="text-[13px]">Typescript</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:800ms]">
               <FaJs size={50} />
               <p className="text-[13px]">Javascript</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:900ms]">
               <FaHtml5 size={50} />
               <p className="text-[13px]">HTML5</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1000ms]">
               <FaCss3Alt size={50} />
               <p className="text-[13px]">CSS3</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1100ms]">
               <RiTailwindCssFill size={50} />
               <p className="text-[13px]">Tailwind</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1200ms]">
               <SiPrisma size={50} />
               <p className="text-[13px]">Prisma</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1300ms]">
               <SiPostgresql size={50} />
               <p className="text-[13px]">Postgresql</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1400ms]">
               <IoLogoVercel size={50} />
               <p className="text-[13px]">Vercel</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1500ms]">
               <FaGitAlt size={50} />
               <p className="text-[13px]">GIT</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1700ms]">
               <FaSquareGithub size={50} />
               <p className="text-[13px]">Github</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1800ms]">
               <TbBrandCSharp size={50} />
               <p className="text-[13px]">C#</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 [animation-delay:1900ms]">
               <SiCplusplus size={50} />
               <p className="text-[13px]">C++</p>
             </div>
