@@ -17,8 +17,8 @@ function StartPage() {
       <div className="w-screen h-screen bg-teal-950 overflow-x-hidden flex items-center justify-center">
         <div className=" w-1/2 h-9/12 flex justify-center  text-center flex-wrap">
           <div className=" w-full h-1/2 pt-10">
-            <div className="flex justify-center items-center">
-              <h1 className="text-5xl animate-m opacity-0">M</h1>
+            <div className=" flex justify-center items-center">
+              <h1 className="animate-m delay-[1000ms] opacity-0 text-5xl">M</h1>
               <h1 className="text-5xl animate-i opacity-0">i</h1>
               <h1 className="text-5xl animate-h opacity-0">h</h1>
               <h1 className="text-5xl animate-a opacity-0">a</h1>
