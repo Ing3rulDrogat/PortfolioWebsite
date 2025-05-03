@@ -19,15 +19,15 @@ function StartPage() {
         <div className=" w-1/2 h-9/12 flex justify-center  text-center flex-wrap">
           <div className=" w-full h-1/2 pt-10">
             <div className=" flex justify-center items-center animate-nameDiv">
-              <h1 className="text-5xl [animation-delay:500ms] animate-name opacity-0 ">M</h1>
-              <h1 className="text-5xl [animation-delay:600ms] animate-name opacity-0">i</h1>
-              <h1 className="text-5xl [animation-delay:700ms] animate-name opacity-0">h</h1>
-              <h1 className="text-5xl [animation-delay:800ms] animate-name opacity-0">a</h1>
-              <h1 className="text-5xl [animation-delay:900ms] animate-name opacity-0">i</h1>
-              <h1 className="text-5xl [animation-delay:1000ms] ml-2 animate-name opacity-0">T</h1>
-              <h1 className="text-5xl [animation-delay:1100ms] animate-name opacity-0">r</h1>
-              <h1 className="text-5xl [animation-delay:1200ms] animate-name opacity-0">i</h1>
-              <h1 className="text-5xl [animation-delay:1300ms] animate-name opacity-0">f</h1>
+              <h1 className="text-5xl [animation-delay:400ms] animate-name opacity-0 ">M</h1>
+              <h1 className="text-5xl [animation-delay:500ms] animate-name opacity-0">i</h1>
+              <h1 className="text-5xl [animation-delay:600ms] animate-name opacity-0">h</h1>
+              <h1 className="text-5xl [animation-delay:700ms] animate-name opacity-0">a</h1>
+              <h1 className="text-5xl [animation-delay:800ms] animate-name opacity-0">i</h1>
+              <h1 className="text-5xl [animation-delay:900ms] ml-2 animate-name opacity-0">T</h1>
+              <h1 className="text-5xl [animation-delay:1000ms] animate-name opacity-0">r</h1>
+              <h1 className="text-5xl [animation-delay:1100ms] animate-name opacity-0">i</h1>
+              <h1 className="text-5xl [animation-delay:1200ms] animate-name opacity-0">f</h1>
             </div>
             <h1 className="text-4xl animate-fullStack opacity-0">Full Stack</h1>
             <h1 className="text-4xl animate-developer opacity-0">

@@ -30,33 +30,107 @@ const Robot = Roboto({
 });
 
 function Skills() {
-  const hasPlayed = useRef<Set<Element>>(new Set());
+  const hasPlayedScrollAnimation = useRef<Set<Element>>(new Set());
 
-  const buttonClicked = () => {
-    const elements = document.querySelectorAll(".skills");
+  var learningRoadmapElements: Element[] = new Array();
+  var technologiesIKnowElements: Element[] = new Array();
 
-    elements.forEach((e) => {
-      var prevTimeDelay: number = 550;
-      var timeDelay: number = 0;
-      e.classList.remove("animate-skillsAppearing");
-      e.classList.remove(`[animation-delay:${prevTimeDelay}ms]`);
+  const timeTakenToPlayAnim = useRef(0);
+
+  const buttonLearningRoadmap = () => {
+    const elements = document.querySelectorAll(".technologiesIKnow");
+    var timeDelay: number = 0;
+
+    elements.forEach((e, index, array) => {
+      const htmlElement = e as HTMLElement;
+      e.classList.replace("animate-skillsAppearing", "animate-skillsDisappearing");
       e.classList.remove("opacity-0");
-      e.classList.add(`[animation-delay:${timeDelay}ms]`);
-      e.classList.add("animate-skillsDisappearing");
-      timeDelay = timeDelay + 50;
+      htmlElement.style.animationDelay = `${timeDelay}ms`;
+      timeDelay = timeDelay + 30;
+      if (index === array.length - 1) {
+        timeDelay = 0;
+        e.addEventListener("animationend", () => {
+          technologiesIKnowElements.forEach((e) => {
+            e.classList.add("hidden");
+          });
+          learningRoadmapElements.forEach((e) => {
+            e.classList.add("animate-skillsAppearing");
+            const htmlElement = e as HTMLElement;
+            htmlElement.style.animationDelay = `${timeDelay}ms`;
+            timeDelay = timeDelay + 30;
+            e.classList.replace("hidden", "flex");
+          });
+        });
+      }
+    });
+
+    // const learningRoadmapE = document.querySelectorAll(".learningRoadmap");
+    // learningRoadmapE.forEach((e) => {
+    //   learningRoadmapElements.push(e);
+
+    //   if (e.classList.contains("hidden")) {
+    //     try {
+    //       e.classList.remove("animate-SkillsDisappearing");
+    //     } catch (error) {
+    //     } finally {
+    //       const htmlElement = e as HTMLElement;
+    //       e.classList.add("animate-skillsAppearing");
+    //       timeDelayDisappear = timeDelayDisappear + 30;
+    //       htmlElement.style.animationDelay = `${timeDelayDisappear}ms`;
+    //       setTimeout(() => e.classList.remove("hidden"), timeTakenToPlayAnim.current * 2);
+    //     }
+    //   }
+    // });
+  };
+
+  const buttonTechnologiesIKnow = () => {
+    var timeDelay: number = 0;
+
+    learningRoadmapElements.forEach((e, index, array) => {
+      const htmlElement = e as HTMLElement;
+      e.classList.replace("opacity-0", "opacity-1");
+      htmlElement.style.animationDelay = `${timeDelay}ms`;
+      e.classList.replace("animate-skillsAppearing", "animate-skillsDisappearing");
+      timeDelay = timeDelay + 30;
+      console.log(index);
+      console.log(array.length);
+      if (index === array.length - 1) {
+        e.addEventListener("animationend", () => {
+          console.log("Yo");
+          learningRoadmapElements.forEach((e) => {
+            // e.classList.replace("flex", "hidden");
+          });
+          console.log("Yo2");
+          technologiesIKnowElements.forEach((e) => {
+            e.classList.replace("hidden", "flex");
+            e.classList.add("animate-skillsAppearing");
+            const htmlElement = e as HTMLElement;
+            htmlElement.style.animationDelay = `${timeDelay}ms`;
+            console.log(timeDelay);
+            timeDelay = timeDelay + 30;
+          });
+          console.log("Yo3");
+        });
+      }
+      setTimeout(() => e.classList.add("hidden"), timeTakenToPlayAnim.current);
     });
   };
 
   useEffect(() => {
+    const learningRoadmapEl = document.querySelectorAll(".learningRoadmap");
+
+    var timeDelay: number = 250;
     const observer = new IntersectionObserver(
       (entries) => {
-        var timeDelay: number = 550;
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasPlayed.current.has(entry.target)) {
+          technologiesIKnowElements.push(entry.target);
+          if (entry.isIntersecting && !hasPlayedScrollAnimation.current.has(entry.target)) {
+            const target = entry.target as HTMLElement;
+            target.style.animationDelay = `${timeDelay}ms`;
+            entry.target.classList.remove("hidden");
+            entry.target.classList.add("flex");
+            timeDelay = timeDelay + 30;
             entry.target.classList.add("animate-skillsAppearing");
-            entry.target.classList.add(`[animation-delay:${timeDelay}ms]`);
-            timeDelay = timeDelay + 50;
-            hasPlayed.current.add(entry.target);
           } else {
             // entry.target.classList.remove("animate-skills");
           }
@@ -65,10 +139,14 @@ function Skills() {
       { threshold: 0.5 }
     );
 
-    const elements = document.querySelectorAll(".skills");
+    const elements = document.querySelectorAll(".technologiesIKnow");
 
     elements.forEach((el) => {
       observer.observe(el);
+    });
+
+    learningRoadmapEl.forEach((e) => {
+      learningRoadmapElements.push(e);
     });
 
     return () => observer.disconnect();
@@ -89,73 +167,106 @@ function Skills() {
           <div className=" w-1/3 h-2/12 grid grid-cols-2 place-items-center">
             <button
               type="button"
-              onClick={buttonClicked}
+              onClick={buttonTechnologiesIKnow}
               className="z-10 relative px-4 py-2 mx-5 h-1/2 bg-amber-700 text-white rounded hover:bg-blue-700 transition cursor-pointer button-TEMP"
             >
               Technologies I know
             </button>
-            <button type="button" className="px-4 py-2 mx-5 bg-amber-700 text-white rounded hover:bg-blue-700 transition cursor-pointer">
+
+            <button
+              type="button"
+              onClick={buttonLearningRoadmap}
+              className="px-4 py-2 mx-5 bg-amber-700 text-white rounded hover:bg-blue-700 transition cursor-pointer"
+            >
               Learning roadmap
             </button>
           </div>
           <div className="bg-teal-950 w-8/12 h-1/2 my-13 rounded-3xl grid grid-cols-7">
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+              <TbBrandThreejs size={50} />
+              <p className="text-[13px]">Threejs</p>
+            </div>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+              <TbBrandThreejs size={50} />
+              <p className="text-[13px]">Threejs</p>
+            </div>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+              <TbBrandThreejs size={50} />
+              <p className="text-[13px]">Threejs</p>
+            </div>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+              <TbBrandThreejs size={50} />
+              <p className="text-[13px]">Threejs</p>
+            </div>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+              <TbBrandThreejs size={50} />
+              <p className="text-[13px]">Threejs</p>
+            </div>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+              <TbBrandThreejs size={50} />
+              <p className="text-[13px]">Threejs</p>
+            </div>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+              <TbBrandThreejs size={50} />
+              <p className="text-[13px]">Threejs</p>
+            </div>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+              <TbBrandThreejs size={50} />
+              <p className="text-[13px]">Threejs</p>
+            </div>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
               <FaReact size={50} />
               <p className="text-[13px]">React</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
               <SiNextdotjs size={50} />
               <p className="text-[13px]">Next.js</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
               <SiTypescript size={46} />
               <p className="text-[13px]">Typescript</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
               <FaJs size={50} />
               <p className="text-[13px]">Javascript</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
               <FaHtml5 size={50} />
               <p className="text-[13px]">HTML5</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
               <FaCss3Alt size={50} />
               <p className="text-[13px]">CSS3</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
               <RiTailwindCssFill size={50} />
               <p className="text-[13px]">Tailwind</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
               <SiPrisma size={50} />
               <p className="text-[13px]">Prisma</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 ">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
               <SiPostgresql size={50} />
               <p className="text-[13px]">Postgresql</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
               <IoLogoVercel size={50} />
               <p className="text-[13px]">Vercel</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0">
               <FaGitAlt size={50} />
               <p className="text-[13px]">GIT</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0">
               <FaSquareGithub size={50} />
               <p className="text-[13px]">Github</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0">
               <TbBrandCSharp size={50} />
               <p className="text-[13px]">C#</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0">
-              <SiCplusplus size={50} />
-              <p className="text-[13px]">C++</p>
-            </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 skills opacity-0 hidden">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0">
               <SiCplusplus size={50} />
               <p className="text-[13px]">C++</p>
             </div>
