@@ -22,7 +22,7 @@ import { IoLogoElectron } from "react-icons/io5";
 import { FaNode } from "react-icons/fa";
 import { FaDocker } from "react-icons/fa";
 
-import { Roboto } from "next/font/google";
+import { Handlee, Roboto } from "next/font/google";
 const Robot = Roboto({
   weight: ["400"],
   subsets: ["latin"],
@@ -32,88 +32,82 @@ const Robot = Roboto({
 function Skills() {
   const hasPlayedScrollAnimation = useRef<Set<Element>>(new Set());
 
+  const technologiesIKnowShown = useRef(true);
+
   var learningRoadmapElements: Element[] = new Array();
   var technologiesIKnowElements: Element[] = new Array();
 
   const timeTakenToPlayAnim = useRef(0);
 
+  const attachAnimationEndListener = (element: HTMLElement, callback: () => void) => {
+    const handler = () => {
+      callback();
+      element.removeEventListener("animationend", handler);
+    };
+    element.addEventListener("animationend", handler);
+  };
+
   const buttonLearningRoadmap = () => {
     const elements = document.querySelectorAll(".technologiesIKnow");
     var timeDelay: number = 0;
+    if (technologiesIKnowShown.current) {
+      technologiesIKnowShown.current = false;
+      elements.forEach((e, index, array) => {
+        const htmlElement = e as HTMLElement;
+        e.classList.replace("animate-skillsAppearing", "animate-skillsDisappearing");
+        e.classList.remove("opacity-0");
+        htmlElement.style.animationDelay = `${timeDelay}ms`;
+        timeDelay = timeDelay + 30;
+        if (index === array.length - 1) {
+          timeDelay = 0;
 
-    elements.forEach((e, index, array) => {
-      const htmlElement = e as HTMLElement;
-      e.classList.replace("animate-skillsAppearing", "animate-skillsDisappearing");
-      e.classList.remove("opacity-0");
-      htmlElement.style.animationDelay = `${timeDelay}ms`;
-      timeDelay = timeDelay + 30;
-      if (index === array.length - 1) {
-        timeDelay = 0;
-        e.addEventListener("animationend", () => {
-          technologiesIKnowElements.forEach((e) => {
-            e.classList.add("hidden");
+          attachAnimationEndListener(htmlElement as HTMLElement, () => {
+            technologiesIKnowElements.forEach((e) => {
+              e.classList.add("hidden");
+            });
+
+            learningRoadmapElements.forEach((e) => {
+              e.classList.add("animate-skillsAppearing");
+              const htmlElement = e as HTMLElement;
+              htmlElement.style.animationDelay = `${timeDelay}ms`;
+              timeDelay = timeDelay + 30;
+              e.classList.replace("hidden", "flex");
+            });
           });
-          learningRoadmapElements.forEach((e) => {
-            e.classList.add("animate-skillsAppearing");
-            const htmlElement = e as HTMLElement;
-            htmlElement.style.animationDelay = `${timeDelay}ms`;
-            timeDelay = timeDelay + 30;
-            e.classList.replace("hidden", "flex");
-          });
-        });
-      }
-    });
-
-    // const learningRoadmapE = document.querySelectorAll(".learningRoadmap");
-    // learningRoadmapE.forEach((e) => {
-    //   learningRoadmapElements.push(e);
-
-    //   if (e.classList.contains("hidden")) {
-    //     try {
-    //       e.classList.remove("animate-SkillsDisappearing");
-    //     } catch (error) {
-    //     } finally {
-    //       const htmlElement = e as HTMLElement;
-    //       e.classList.add("animate-skillsAppearing");
-    //       timeDelayDisappear = timeDelayDisappear + 30;
-    //       htmlElement.style.animationDelay = `${timeDelayDisappear}ms`;
-    //       setTimeout(() => e.classList.remove("hidden"), timeTakenToPlayAnim.current * 2);
-    //     }
-    //   }
-    // });
+        }
+      });
+    }
   };
 
   const buttonTechnologiesIKnow = () => {
     var timeDelay: number = 0;
+    if (technologiesIKnowShown) {
+      technologiesIKnowShown.current = false;
+      learningRoadmapElements.forEach((e, index, array) => {
+        const htmlElement = e as HTMLElement;
+        htmlElement.style.animationDelay = `${timeDelay}ms`;
+        e.classList.replace("animate-skillsAppearing", "animate-skillsDisappearing");
+        e.classList.replace("opacity-0", "opacity-1");
+        timeDelay = timeDelay + 30;
+        if (index === array.length - 1) {
+          attachAnimationEndListener(htmlElement as HTMLElement, () => {
+            learningRoadmapElements.forEach((e) => {
+              e.classList.replace("flex", "hidden");
+              console.log("541235676");
+            });
 
-    learningRoadmapElements.forEach((e, index, array) => {
-      const htmlElement = e as HTMLElement;
-      e.classList.replace("opacity-0", "opacity-1");
-      htmlElement.style.animationDelay = `${timeDelay}ms`;
-      e.classList.replace("animate-skillsAppearing", "animate-skillsDisappearing");
-      timeDelay = timeDelay + 30;
-      console.log(index);
-      console.log(array.length);
-      if (index === array.length - 1) {
-        e.addEventListener("animationend", () => {
-          console.log("Yo");
-          learningRoadmapElements.forEach((e) => {
-            // e.classList.replace("flex", "hidden");
+            technologiesIKnowElements.forEach((e) => {
+              e.classList.replace("hidden", "flex");
+              e.classList.replace("animate-skillsDisappearing", "animate-skillsAppearing");
+              const htmlElement = e as HTMLElement;
+              htmlElement.style.animationDelay = `${timeDelay}ms`;
+              console.log(timeDelay);
+              timeDelay = timeDelay + 30;
+            });
           });
-          console.log("Yo2");
-          technologiesIKnowElements.forEach((e) => {
-            e.classList.replace("hidden", "flex");
-            e.classList.add("animate-skillsAppearing");
-            const htmlElement = e as HTMLElement;
-            htmlElement.style.animationDelay = `${timeDelay}ms`;
-            console.log(timeDelay);
-            timeDelay = timeDelay + 30;
-          });
-          console.log("Yo3");
-        });
-      }
-      setTimeout(() => e.classList.add("hidden"), timeTakenToPlayAnim.current);
-    });
+        }
+      });
+    }
   };
 
   useEffect(() => {
