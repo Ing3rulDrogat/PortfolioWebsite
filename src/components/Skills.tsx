@@ -14,7 +14,7 @@ import { TbBrandThreejs } from "react-icons/tb";
 import { SiTypescript } from "react-icons/si";
 import { FaJs } from "react-icons/fa";
 import { TbBrandCSharp } from "react-icons/tb";
-import { SiCplusplus } from "react-icons/si";
+import { SiN8N } from "react-icons/si";
 
 import { FaAws } from "react-icons/fa6";
 import { TbBrandReactNative } from "react-icons/tb";
@@ -80,24 +80,6 @@ function Skills() {
     } else {
       return;
     }
-
-    // const learningRoadmapE = document.querySelectorAll(".learningRoadmap");
-    // learningRoadmapE.forEach((e) => {
-    //   learningRoadmapElements.push(e);
-
-    //   if (e.classList.contains("hidden")) {
-    //     try {
-    //       e.classList.remove("animate-SkillsDisappearing");
-    //     } catch (error) {
-    //     } finally {
-    //       const htmlElement = e as HTMLElement;
-    //       e.classList.add("animate-skillsAppearing");
-    //       timeDelayDisappear = timeDelayDisappear + 30;
-    //       htmlElement.style.animationDelay = `${timeDelayDisappear}ms`;
-    //       setTimeout(() => e.classList.remove("hidden"), timeTakenToPlayAnim.current * 2);
-    //     }
-    //   }
-    // });
   };
 
   const buttonTechnologiesIKnow = () => {
@@ -111,26 +93,22 @@ function Skills() {
         htmlElement.style.animationDelay = `${timeDelay}ms`;
         e.classList.replace("animate-skillsAppearing", "animate-skillsDisappearing");
         timeDelay = timeDelay + 30;
-        console.log(index);
-        console.log(array.length);
         if (index === array.length - 1) {
-          timeDelay = 0;
+          var innerTimeDelay: number = 0;
           e.addEventListener(
             "animationend",
             () => {
-              console.log("Yo");
               learningRoadmapElements.forEach((e) => {
                 e.classList.replace("flex", "hidden");
               });
-              console.log("Yo2");
               technologiesIKnowElements.forEach((e) => {
                 e.classList.add("opacity-0");
                 const htmlElement = e as HTMLElement;
-                htmlElement.style.animationDelay = `${timeDelay}ms`;
+                htmlElement.style.animationDelay = `${innerTimeDelay}ms`;
                 e.classList.replace("animate-skillsDisappearing", "animate-skillsAppearing");
                 e.classList.replace("hidden", "flex");
-                console.log(timeDelay);
-                timeDelay = timeDelay + 30;
+                console.log(innerTimeDelay);
+                innerTimeDelay = innerTimeDelay + 30;
                 e.addEventListener("animationend", () => {
                   e.classList.remove("opacity-0");
                 });
@@ -151,14 +129,15 @@ function Skills() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          technologiesIKnowElements.push(entry.target);
           if (entry.isIntersecting && !hasPlayedScrollAnimation.current.has(entry.target)) {
+            technologiesIKnowElements.push(entry.target);
             const target = entry.target as HTMLElement;
             target.style.animationDelay = `${timeDelay}ms`;
             entry.target.classList.remove("hidden");
             entry.target.classList.add("flex");
             timeDelay = timeDelay + 30;
             entry.target.classList.add("animate-skillsAppearing");
+            hasPlayedScrollAnimation.current.add(entry.target);
             entry.target.addEventListener("animationend", () => {
               entry.target.classList.remove("opacity-0");
             });
@@ -298,8 +277,8 @@ function Skills() {
               <p className="text-[13px]">C#</p>
             </div>
             <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0">
-              <SiCplusplus size={50} />
-              <p className="text-[13px]">C++</p>
+              <SiN8N size={50} />
+              <p className="text-[13px]">N8N</p>
             </div>
           </div>
         </div>
