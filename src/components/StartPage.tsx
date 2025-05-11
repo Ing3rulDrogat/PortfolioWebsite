@@ -61,9 +61,8 @@ function StartPage() {
             </div>
             <div>
               <p>
-                I’m Mihai, a 20-year-old computer science student with a strong passion for technology and problem-solving. I thrive on tackling complex
-                challenges and continuously expanding my knowledge in both frontend and backend development. My goal is to build efficient, user-friendly
-                applications while growing as a well-rounded software developer.
+                I'm Mihai, a 20-year-old computer science student passionate about tech and problem-solving. I enjoy building efficient, user-friendly apps and
+                growing in both frontend and backend development.
               </p>
             </div>
           </div>

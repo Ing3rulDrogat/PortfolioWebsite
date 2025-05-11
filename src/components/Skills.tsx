@@ -168,19 +168,19 @@ function Skills() {
       <div className="w-screen h-screen bg-teal-900">
         <div className=" w-full h-3/12 text-center content-center place-items-center">
           <div className="bg-teal-950 w-1/2 rounded-lg">
-            <h1 className="text-3xl mb-7"> About Me:</h1>
-            <p className="text-2xl">
+            <h1 className="lg:text-3xl text-lg mb-7"> About Me:</h1>
+            <p className="lg:text-2xl text-md">
               These are a couple of technologies I know and will work with in the future. I also have a road map which are technologies I want to learn in the
               future to become a more well rounded developer
             </p>
           </div>
         </div>
         <div className=" w-full h-7/12  place-items-center pt-5">
-          <div className=" w-1/3 h-2/12 grid grid-cols-2 place-items-center">
+          <div className=" lg:w-1/3 lg:h-2/12 mt-10 lg:mt-0 grid grid-cols-2 place-items-center">
             <button
               type="button"
               onClick={buttonTechnologiesIKnow}
-              className="z-10 relative px-4 py-2 mx-5 h-1/2 bg-teal-950 text-white rounded-lg hover:bg-gradient-to-t hover:from-teal-950 hover:to-gray-400 transition cursor-pointer"
+              className="z-10 relative px-4 py-2 mx-5 lg:h-1/2 h-full bg-teal-950 text-white rounded-lg hover:bg-gradient-to-t hover:from-teal-950 hover:to-gray-400 transition cursor-pointer"
             >
               Technologies I know
             </button>
@@ -188,99 +188,99 @@ function Skills() {
             <button
               type="button"
               onClick={buttonLearningRoadmap}
-              className="px-4 py-2 mx-5 text-white rounded-lg bg-teal-950 hover:bg-gradient-to-t hover:from-teal-950 hover:to-gray-400 transition cursor-pointer"
+              className="px-4 py-2 mx-5 lg:h-1/2 h-full text-white rounded-lg bg-teal-950 hover:bg-gradient-to-t hover:from-teal-950 hover:to-gray-400 transition cursor-pointer"
             >
               Learning roadmap
             </button>
           </div>
-          <div className="bg-teal-950 w-8/12 h-1/2 my-13 rounded-3xl grid grid-cols-7">
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
-              <TbBrandThreejs size={50} />
-              <p className="text-[13px]">Threejs</p>
+          <div className="bg-teal-950 lg:w-8/12 lg:h-1/2 h-50/64 w-55/64 my-13 rounded-3xl grid lg:grid-cols-7 grid-cols-4">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 h-1/3 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
+              <TbBrandThreejs className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">Threejs</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden  learningRoadmap">
-              <FaAws size={50} />
-              <p className="text-[13px]">AWS</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 h-1/3 mx-5 my-5 items-center flex-col pt-1  hidden  learningRoadmap">
+              <FaAws className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">AWS</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden  learningRoadmap">
-              <TbBrandReactNative size={50} />
-              <p className="text-[13px]">React Native</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 h-1/3 mx-5 my-5 items-center flex-col pt-1  hidden  learningRoadmap">
+              <TbBrandReactNative className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">React Native</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
-              <IoLogoElectron size={50} />
-              <p className="text-[13px]">Electronjs</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 h-1/3 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
+              <IoLogoElectron className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">Electronjs</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
-              <FaNode size={50} />
-              <p className="text-[13px]">Nodejs</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 h-1/3 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
+              <FaNode className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">Nodejs</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden  learningRoadmap">
-              <FaDocker size={50} />
-              <p className="text-[13px]">Docker</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 h-1/3 mx-5 my-5 items-center flex-col pt-1  hidden  learningRoadmap">
+              <FaDocker className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">Docker</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
-              <IoLogoFirebase size={50} />
-              <p className="text-[13px]">Firebase</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 h-1/3 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
+              <IoLogoFirebase className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">Firebase</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
-              <GiArtificialIntelligence size={50} />
-              <p className="text-[13px]">AI</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 h-1/3 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
+              <GiArtificialIntelligence className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">AI</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
-              <FaReact size={50} />
-              <p className="text-[13px]">React</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
+              <FaReact className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">React</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
-              <SiNextdotjs size={50} />
-              <p className="text-[13px]">Next.js</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
+              <SiNextdotjs className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">Next.js</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
-              <SiTypescript size={46} />
-              <p className="text-[13px]">Typescript</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
+              <SiTypescript className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">Typescript</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
-              <FaJs size={50} />
-              <p className="text-[13px]">Javascript</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
+              <FaJs className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">Javascript</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
-              <FaHtml5 size={50} />
-              <p className="text-[13px]">HTML5</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
+              <FaHtml5 className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">HTML5</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
-              <FaCss3Alt size={50} />
-              <p className="text-[13px]">CSS3</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
+              <FaCss3Alt className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">CSS3</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
-              <RiTailwindCssFill size={50} />
-              <p className="text-[13px]">Tailwind</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
+              <RiTailwindCssFill className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">Tailwind</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
-              <SiPrisma size={50} />
-              <p className="text-[13px]">Prisma</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
+              <SiPrisma className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">Prisma</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
-              <SiPostgresql size={50} />
-              <p className="text-[13px]">Postgresql</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
+              <SiPostgresql className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">Postgresql</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
-              <IoLogoVercel size={50} />
-              <p className="text-[13px]">Vercel</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
+              <IoLogoVercel className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">Vercel</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0">
-              <FaGitAlt size={50} />
-              <p className="text-[13px]">GIT</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0">
+              <FaGitAlt className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">GIT</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0">
-              <FaSquareGithub size={50} />
-              <p className="text-[13px]">Github</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0">
+              <FaSquareGithub className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">Github</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0">
-              <TbBrandCSharp size={50} />
-              <p className="text-[13px]">C#</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0">
+              <TbBrandCSharp className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">C#</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0">
-              <SiN8N size={50} />
-              <p className="text-[13px]">N8N</p>
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 lg:w-20 lg:h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0">
+              <SiN8N className="text-4xl lg:text-5xl" />
+              <p className="text-[13px] hidden lg:block">N8N</p>
             </div>
           </div>
         </div>
