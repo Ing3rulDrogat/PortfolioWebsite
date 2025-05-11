@@ -32,6 +32,8 @@ const Robot = Roboto({
 function Skills() {
   const hasPlayedScrollAnimation = useRef<Set<Element>>(new Set());
 
+  const technologiesIKnowSelected = useRef<boolean>(true);
+
   var learningRoadmapElements: Element[] = new Array();
   var technologiesIKnowElements: Element[] = new Array();
 
@@ -40,29 +42,40 @@ function Skills() {
   const buttonLearningRoadmap = () => {
     const elements = document.querySelectorAll(".technologiesIKnow");
     var timeDelay: number = 0;
-
-    elements.forEach((e, index, array) => {
-      const htmlElement = e as HTMLElement;
-      e.classList.replace("animate-skillsAppearing", "animate-skillsDisappearing");
-      e.classList.remove("opacity-0");
-      htmlElement.style.animationDelay = `${timeDelay}ms`;
-      timeDelay = timeDelay + 30;
-      if (index === array.length - 1) {
-        timeDelay = 0;
-        e.addEventListener("animationend", () => {
-          technologiesIKnowElements.forEach((e) => {
-            e.classList.add("hidden");
-          });
-          learningRoadmapElements.forEach((e) => {
-            e.classList.add("animate-skillsAppearing");
-            const htmlElement = e as HTMLElement;
-            htmlElement.style.animationDelay = `${timeDelay}ms`;
-            timeDelay = timeDelay + 30;
-            e.classList.replace("hidden", "flex");
-          });
-        });
-      }
-    });
+    if (technologiesIKnowSelected.current === true) {
+      technologiesIKnowSelected.current = false;
+      elements.forEach((e, index, array) => {
+        const htmlElement = e as HTMLElement;
+        e.classList.replace("animate-skillsAppearing", "animate-skillsDisappearing");
+        htmlElement.style.animationDelay = `${timeDelay}ms`;
+        timeDelay = timeDelay + 30;
+        if (index === array.length - 1) {
+          timeDelay = 0;
+          e.addEventListener(
+            "animationend",
+            () => {
+              technologiesIKnowElements.forEach((e) => {
+                e.classList.add("hidden");
+              });
+              learningRoadmapElements.forEach((e) => {
+                e.classList.replace("hidden", "flex");
+                e.classList.add("opacity-0");
+                e.classList.add("animate-skillsAppearing");
+                const htmlElement = e as HTMLElement;
+                htmlElement.style.animationDelay = `${timeDelay}ms`;
+                timeDelay = timeDelay + 30;
+                e.addEventListener("animationend", () => {
+                  e.classList.remove("opacity-0");
+                });
+              });
+            },
+            { once: true }
+          );
+        }
+      });
+    } else {
+      return;
+    }
 
     // const learningRoadmapE = document.querySelectorAll(".learningRoadmap");
     // learningRoadmapE.forEach((e) => {
@@ -85,35 +98,46 @@ function Skills() {
 
   const buttonTechnologiesIKnow = () => {
     var timeDelay: number = 0;
-
-    learningRoadmapElements.forEach((e, index, array) => {
-      const htmlElement = e as HTMLElement;
-      e.classList.replace("opacity-0", "opacity-1");
-      htmlElement.style.animationDelay = `${timeDelay}ms`;
-      e.classList.replace("animate-skillsAppearing", "animate-skillsDisappearing");
-      timeDelay = timeDelay + 30;
-      console.log(index);
-      console.log(array.length);
-      if (index === array.length - 1) {
-        e.addEventListener("animationend", () => {
-          console.log("Yo");
-          learningRoadmapElements.forEach((e) => {
-            // e.classList.replace("flex", "hidden");
-          });
-          console.log("Yo2");
-          technologiesIKnowElements.forEach((e) => {
-            e.classList.replace("hidden", "flex");
-            e.classList.add("animate-skillsAppearing");
-            const htmlElement = e as HTMLElement;
-            htmlElement.style.animationDelay = `${timeDelay}ms`;
-            console.log(timeDelay);
-            timeDelay = timeDelay + 30;
-          });
-          console.log("Yo3");
-        });
-      }
-      setTimeout(() => e.classList.add("hidden"), timeTakenToPlayAnim.current);
-    });
+    if (technologiesIKnowSelected.current === true) {
+      return;
+    } else {
+      technologiesIKnowSelected.current = true;
+      learningRoadmapElements.forEach((e, index, array) => {
+        const htmlElement = e as HTMLElement;
+        htmlElement.style.animationDelay = `${timeDelay}ms`;
+        e.classList.replace("animate-skillsAppearing", "animate-skillsDisappearing");
+        timeDelay = timeDelay + 30;
+        console.log(index);
+        console.log(array.length);
+        if (index === array.length - 1) {
+          timeDelay = 0;
+          e.addEventListener(
+            "animationend",
+            () => {
+              console.log("Yo");
+              learningRoadmapElements.forEach((e) => {
+                e.classList.replace("flex", "hidden");
+              });
+              console.log("Yo2");
+              technologiesIKnowElements.forEach((e) => {
+                e.classList.add("opacity-0");
+                const htmlElement = e as HTMLElement;
+                htmlElement.style.animationDelay = `${timeDelay}ms`;
+                e.classList.replace("animate-skillsDisappearing", "animate-skillsAppearing");
+                e.classList.replace("hidden", "flex");
+                console.log(timeDelay);
+                timeDelay = timeDelay + 30;
+                e.addEventListener("animationend", () => {
+                  e.classList.remove("opacity-0");
+                });
+              });
+              console.log("Yo3");
+            },
+            { once: true }
+          );
+        }
+      });
+    }
   };
 
   useEffect(() => {
@@ -131,6 +155,9 @@ function Skills() {
             entry.target.classList.add("flex");
             timeDelay = timeDelay + 30;
             entry.target.classList.add("animate-skillsAppearing");
+            entry.target.addEventListener("animationend", () => {
+              entry.target.classList.remove("opacity-0");
+            });
           } else {
             // entry.target.classList.remove("animate-skills");
           }
@@ -182,35 +209,35 @@ function Skills() {
             </button>
           </div>
           <div className="bg-teal-950 w-8/12 h-1/2 my-13 rounded-3xl grid grid-cols-7">
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
               <TbBrandThreejs size={50} />
               <p className="text-[13px]">Threejs</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden  learningRoadmap">
               <TbBrandThreejs size={50} />
               <p className="text-[13px]">Threejs</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden  learningRoadmap">
               <TbBrandThreejs size={50} />
               <p className="text-[13px]">Threejs</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
               <TbBrandThreejs size={50} />
               <p className="text-[13px]">Threejs</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
               <TbBrandThreejs size={50} />
               <p className="text-[13px]">Threejs</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden  learningRoadmap">
               <TbBrandThreejs size={50} />
               <p className="text-[13px]">Threejs</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
               <TbBrandThreejs size={50} />
               <p className="text-[13px]">Threejs</p>
             </div>
-            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden opacity-0 learningRoadmap">
+            <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
               <TbBrandThreejs size={50} />
               <p className="text-[13px]">Threejs</p>
             </div>
