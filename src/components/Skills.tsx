@@ -21,6 +21,8 @@ import { TbBrandReactNative } from "react-icons/tb";
 import { IoLogoElectron } from "react-icons/io5";
 import { FaNode } from "react-icons/fa";
 import { FaDocker } from "react-icons/fa";
+import { IoLogoFirebase } from "react-icons/io5";
+import { GiArtificialIntelligence } from "react-icons/gi";
 
 import { Roboto } from "next/font/google";
 const Robot = Roboto({
@@ -31,17 +33,16 @@ const Robot = Roboto({
 
 function Skills() {
   const hasPlayedScrollAnimation = useRef<Set<Element>>(new Set());
-
   const technologiesIKnowSelected = useRef<boolean>(true);
 
+  const [technologiesIKnow, settechnologiesIKnow] = useState(true);
   var learningRoadmapElements: Element[] = new Array();
   var technologiesIKnowElements: Element[] = new Array();
-
-  const timeTakenToPlayAnim = useRef(0);
 
   const buttonLearningRoadmap = () => {
     const elements = document.querySelectorAll(".technologiesIKnow");
     var timeDelay: number = 0;
+
     if (technologiesIKnowSelected.current === true) {
       technologiesIKnowSelected.current = false;
       elements.forEach((e, index, array) => {
@@ -165,11 +166,12 @@ function Skills() {
   return (
     <div className={Robot.className}>
       <div className="w-screen h-screen bg-teal-900">
-        <div className="bg-blue-700 w-full h-3/12 text-center content-center place-items-center">
-          <div className="bg-blue-900 w-1/2 ">
+        <div className=" w-full h-3/12 text-center content-center place-items-center">
+          <div className="bg-teal-950 w-1/2 rounded-lg">
             <h1 className="text-3xl mb-7"> About Me:</h1>
             <p className="text-2xl">
-              I am a full stack software and website developer working on expanding my knowledge. I have examples of a few projects on the next page.
+              These are a couple of technologies I know and will work with in the future. I also have a road map which are technologies I want to learn in the
+              future to become a more well rounded developer
             </p>
           </div>
         </div>
@@ -178,7 +180,7 @@ function Skills() {
             <button
               type="button"
               onClick={buttonTechnologiesIKnow}
-              className="z-10 relative px-4 py-2 mx-5 h-1/2 bg-amber-700 text-white rounded hover:bg-blue-700 transition cursor-pointer button-TEMP"
+              className="z-10 relative px-4 py-2 mx-5 h-1/2 bg-teal-950 text-white rounded-lg hover:bg-gradient-to-t hover:from-teal-950 hover:to-gray-400 transition cursor-pointer"
             >
               Technologies I know
             </button>
@@ -186,7 +188,7 @@ function Skills() {
             <button
               type="button"
               onClick={buttonLearningRoadmap}
-              className="px-4 py-2 mx-5 bg-amber-700 text-white rounded hover:bg-blue-700 transition cursor-pointer"
+              className="px-4 py-2 mx-5 text-white rounded-lg bg-teal-950 hover:bg-gradient-to-t hover:from-teal-950 hover:to-gray-400 transition cursor-pointer"
             >
               Learning roadmap
             </button>
@@ -197,32 +199,32 @@ function Skills() {
               <p className="text-[13px]">Threejs</p>
             </div>
             <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden  learningRoadmap">
-              <TbBrandThreejs size={50} />
-              <p className="text-[13px]">Threejs</p>
+              <FaAws size={50} />
+              <p className="text-[13px]">AWS</p>
             </div>
             <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden  learningRoadmap">
-              <TbBrandThreejs size={50} />
-              <p className="text-[13px]">Threejs</p>
+              <TbBrandReactNative size={50} />
+              <p className="text-[13px]">React Native</p>
             </div>
             <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
-              <TbBrandThreejs size={50} />
-              <p className="text-[13px]">Threejs</p>
+              <IoLogoElectron size={50} />
+              <p className="text-[13px]">Electronjs</p>
             </div>
             <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
-              <TbBrandThreejs size={50} />
-              <p className="text-[13px]">Threejs</p>
+              <FaNode size={50} />
+              <p className="text-[13px]">Nodejs</p>
             </div>
             <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden  learningRoadmap">
-              <TbBrandThreejs size={50} />
-              <p className="text-[13px]">Threejs</p>
+              <FaDocker size={50} />
+              <p className="text-[13px]">Docker</p>
             </div>
             <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
-              <TbBrandThreejs size={50} />
-              <p className="text-[13px]">Threejs</p>
+              <IoLogoFirebase size={50} />
+              <p className="text-[13px]">Firebase</p>
             </div>
             <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 items-center flex-col pt-1  hidden learningRoadmap">
-              <TbBrandThreejs size={50} />
-              <p className="text-[13px]">Threejs</p>
+              <GiArtificialIntelligence size={50} />
+              <p className="text-[13px]">AI</p>
             </div>
             <div className="bg-teal-950 rounded-2xl border-2 border-green-300 w-20 h-8/12 mx-5 my-5 flex items-center flex-col pt-1 technologiesIKnow opacity-0 ">
               <FaReact size={50} />
