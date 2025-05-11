@@ -60,7 +60,11 @@ function Skills() {
               learningRoadmapElements.forEach((e) => {
                 e.classList.replace("hidden", "flex");
                 e.classList.add("opacity-0");
-                e.classList.add("animate-skillsAppearing");
+                if (e.classList.contains("animate-skillsDisappearing")) {
+                  e.classList.replace("animate-skillsDisappearing", "animate-skillsAppearing");
+                } else {
+                  e.classList.add("animate-skillsAppearing");
+                }
                 const htmlElement = e as HTMLElement;
                 htmlElement.style.animationDelay = `${timeDelay}ms`;
                 timeDelay = timeDelay + 30;
