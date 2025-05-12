@@ -58,4 +58,3 @@ Feel free to connect with me:
 
 ---
 
-*Note: Replace placeholder links with your actual contact information.*
