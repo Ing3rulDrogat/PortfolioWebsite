@@ -43,7 +43,7 @@ function Projects() {
                   This portfolio is built with Next.js and React, featuring a fast, responsive design and clean component structure. It showcases my web
                   development skills and personal projects.
                 </p>
-                <p className="text-lg lg:hidden pr-5">This portfolio is built with Next.js and React.</p>
+                <p className="text-lg lg:hidden pr-5">This portfolio is built with Next.js and React. Also uses an AI agent</p>
               </div>
             </div>
           </div>
