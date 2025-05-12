@@ -52,7 +52,7 @@ Visit `http://localhost:3000` to view the website.
 
 Feel free to connect with me:
 
-- [LinkedIn](https://www.linkedin.com/in/yourprofile](https://www.linkedin.com/in/mihai-trif-609a2a297/))
+- [LinkedIn](https://www.linkedin.com/in/mihai-trif-609a2a297/)
 - [GitHub](https://github.com/Ing3rulDrogat)
 - [Email](mailto:myta.boss39@yahoo.com)
 
