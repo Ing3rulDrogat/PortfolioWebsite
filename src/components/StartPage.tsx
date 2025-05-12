@@ -50,7 +50,9 @@ function StartPage() {
                   <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ing3rulDrogat">
                     <FaGithubSquare size={30} className=" hover:scale-120 transition-transform animate-icon2" />
                   </a>
-                  <FaSquareEnvelope size={30} className=" hover:scale-120 transition-transform cursor-pointer animate-icon3" />
+                  <a target="_blank" rel="noopener noreferrer" href="mailto:myta.boss39@yahoo.com?subject=Portfolio Inquiry&body=Hi Mihai,">
+                    <FaSquareEnvelope size={30} className=" hover:scale-120 transition-transform cursor-pointer animate-icon3" />
+                  </a>
                 </div>
               </div>
             </div>

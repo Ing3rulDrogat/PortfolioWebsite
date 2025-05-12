@@ -168,7 +168,7 @@ function Skills() {
       <div className="w-screen h-screen bg-teal-900">
         <div className=" w-full h-3/12 text-center content-center place-items-center">
           <div className="bg-teal-950 w-1/2 rounded-lg">
-            <h1 className="lg:text-3xl text-lg mb-7"> About Me:</h1>
+            <h1 className="lg:text-3xl text-lg mb-7"> Technologies</h1>
             <p className="lg:text-2xl text-md">
               These are a couple of technologies I know and will work with in the future. I also have a road map which are technologies I want to learn in the
               future to become a more well rounded developer
